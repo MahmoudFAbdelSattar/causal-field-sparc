@@ -99,7 +99,7 @@ class SPARCDataFetcher:
         print("="*80)
         print(f"Downloading from: {Config.SPARC_URL}")
         try:
-            response = requests.get(Config.SPARC_URL, timeout=120)
+            response = requests.get(Config.SPARC_URL, timeout=120, verify=False)
             response.raise_for_status()
             print(f"✓ Successfully downloaded {len(response.text):,} bytes")
             return response.text
