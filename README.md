@@ -1,4 +1,3 @@
-```markdown
 # Causal Field Analysis of SPARC Galaxies (v12.1)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -33,10 +32,11 @@ causal-field-sparc/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
-├── sparc_causal_field_exact_c0_v12_1.py   # Main analysis pipeline (v12.1)
-├── all_measurements_YYYYMMDD_HHMMSS.csv   # Complete measurement data
-├── galaxy_statistics_YYYYMMDD_HHMMSS.csv  # Galaxy statistics (with regime classification)
-└── sparc_complete_analysis_exact_c0/      # Output directory (figures, reports)
+├── sparc_causal_field_exact_c0_v12_1.py        # Main analysis pipeline (v12.1)
+├── combines_four_auxiliary_analyses.py         # Auxiliary tests (tautology, MOND, geometric cut)
+├── all_measurements_YYYYMMDD_HHMMSS.csv        # Complete measurement data
+├── galaxy_statistics_YYYYMMDD_HHMMSS.csv       # Galaxy statistics (with regime classification)
+└── sparc_complete_analysis_exact_c0/           # Output directory (figures, reports)
 ├── figure_1_c0_distribution.pdf
 ├── figure_2_progressive_cuts.pdf
 ├── figure_c0_vs_radius_outliers.pdf
@@ -68,37 +68,54 @@ causal-field-sparc/
    - Figure 4: \(\phi\) vs. \(v_{\text{bar}}\)
    - Figure 5: Radial Acceleration Relation (causal model, MOND, and low-acceleration regime)
 
-## New Features in v12.1
+## Auxiliary Analyses
 
-- **Exact \(c_0\) definition** used throughout all calculations
-- **Saturation regime classification** for all galaxies (Slope, Plateau, Valley)
-- **Enhanced RAR figure** with MOND prediction and future test regime
-- **Physical justification of quality cuts** via radius-dependent outlier analysis
-- **Improved visualization** (hist2d for density, transparent scatter overlays)
-- **All comments translated to English** for broader accessibility
+`combines_four_auxiliary_analyses.py` performs additional tests that support the main results:
 
-## Installation
+1. **c₀ vs. Galactocentric Radius:** Outlier concentration analysis (justifying the quality cut).
+2. **Tautology Test:** Spurious convergence check with synthetic datasets (dark-halo, MOND, randomised).
+3. **Theoretical RAR Comparison:** Causal model vs. MOND predictions at low accelerations.
+4. **Geometric Cut Test:** Alternative cut (R > 2 kpc) validation.
 
-### Prerequisites
+To run this script:
+```bash
+python combines_four_auxiliary_analyses.py
+```
 
-- Python 3.10 or higher
-- pip (Python package installer)
+New Features in v12.1
 
-### Setup
+· Exact c_0 definition used throughout all calculations
+· Saturation regime classification for all galaxies (Slope, Plateau, Valley)
+· Enhanced RAR figure with MOND prediction and future test regime
+· Physical justification of quality cuts via radius-dependent outlier analysis
+· Improved visualization (hist2d for density, transparent scatter overlays)
+· All comments translated to English for broader accessibility
+
+Installation
+
+Prerequisites
+
+· Python 3.10 or higher
+· pip (Python package installer)
+
+Setup
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/MahmoudFAbdelSattar/causal-field-sparc.git
    cd causal-field-sparc
-```
-
+   ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the analysis:
+3. Run the main analysis:
    ```bash
    python sparc_causal_field_exact_c0_v12_1.py
+   ```
+4. Run the auxiliary analyses:
+   ```bash
+   python combines_four_auxiliary_analyses.py
    ```
 
 Dependencies
@@ -151,5 +168,3 @@ Mahmoud F. Abdel-Sattar
 · Cairo, Egypt
 · Email: m.f.abdel-sattar@azhar.edu.eg
 · GitHub: MahmoudFAbdelSattar
-
-```
