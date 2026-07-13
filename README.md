@@ -149,7 +149,6 @@ If you use this code or data in your research, please cite:
   title   = {Observational Evidence for a Characteristic Kinematic Speed 
              c₀ ≈ 104 km s⁻¹ in Saturated Spiral Galaxies},
   author  = {Abdel-Sattar, Mahmoud F.},
-  journal = {The Astrophysical Journal (ApJ)},
   year    = {2026},
   note    = {Submitted}
 }
