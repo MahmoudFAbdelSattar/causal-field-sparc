@@ -1,0 +1,14 @@
+# Core dependencies for SPARC Causal Field Analysis (v12.5)
+# Install with: pip install -r requirements.txt
+
+numpy>=1.21
+pandas>=1.3
+scipy>=1.7
+matplotlib>=3.4
+tqdm>=4.62
+requests>=2.26
+astropy>=5.0
+
+# Optional: for Bayesian hierarchical modelling (not required for main results)
+# pymc>=5.0
+# arviz>=0.13
